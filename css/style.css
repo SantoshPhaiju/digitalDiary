@@ -11,7 +11,7 @@ body {
 
 main {
   padding: 48px 64px;
-  min-height: 90vh;
+  min-height: 88vh;
 }
 
 /* Header Styling */
@@ -42,14 +42,14 @@ nav ul li a {
 }
 
 nav ul li:hover {
-  background-color: #45a049; /* darker green on hover */
+  background-color: #45a049;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   box-sizing: border-box;
 }
 
 nav ul li a:hover {
-  color: #d9ffd9; /* light green on hover */
+  color: #d9ffd9;
 }
 
 footer {
@@ -57,7 +57,7 @@ footer {
   color: white;
   padding: 1rem 2rem;
   text-align: center;
-  margin-top: auto; /* Push footer to bottom */
+  margin-top: auto;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,7 +66,6 @@ footer .container {
   margin: 0 auto;
 }
 
-/* Wrapper with grid layout */
 .myContents {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -76,7 +75,6 @@ footer .container {
   padding: 0 1rem;
 }
 
-/* Diary card */
 .diaryEntry {
   background-color: #fff;
   border-left: 4px solid #4caf50;
@@ -86,27 +84,23 @@ footer .container {
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .diaryEntry:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Date */
 .diaryEntry > div:first-child {
   font-size: 0.85rem;
   color: #777;
   margin-bottom: 0.3rem;
 }
 
-/* Title */
 .diaryEntry h2 {
   font-size: 1.1rem;
   color: #333;
   margin-bottom: 0.6rem;
 }
 
-/* Content preview */
 .diaryEntry .content {
   font-size: 0.95rem;
   color: #444;
@@ -114,7 +108,6 @@ footer .container {
   line-height: 1.4;
 }
 
-/* Buttons */
 .diaryEntry button {
   margin-right: 8px;
   border: none;
@@ -136,42 +129,35 @@ footer .container {
   background-color: #3e9443;
 }
 
-
-
-/* Main Heading Container */
 .mainHeading {
-    width: 100%;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  /* Heading Text */
-  .mainHeading h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Add Entry Button */
-  .mainHeading button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  /* Hover effect */
-  .mainHeading button:hover {
-    background-color: #3e9443;
-    transform: scale(1.05);
-  }
-  
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mainHeading h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.mainHeading button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mainHeading button:hover {
+  background-color: #3e9443;
+  transform: scale(1.05);
+}
