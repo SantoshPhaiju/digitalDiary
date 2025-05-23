@@ -1,6 +1,6 @@
 <footer>
     <div class="container">
-        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <p>Made with 🩷 by Santosh Phaiju</p>
 
     </div>
 </footer>
