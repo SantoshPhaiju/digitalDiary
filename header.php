@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,14 +24,21 @@
                 <li><a href="index.php">Home</a></li>
             </ul>
         </nav>
-        <div class="buttons">
-            <button>
-                <a href="login.php">Login</a>
-            </button>
-            <button>
-                <a href="register.php">Register</a>
-            </button>
-        </div>
-
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <div class="buttons">
+                <button>
+                    <a href="login.php">Login</a>
+                </button>
+                <button>
+                    <a href="register.php">Register</a>
+                </button>
+            </div>
+        <?php else: ?>
+            <div class="buttons">
+                <button>
+                    <a href="logout.php">Logout</a>
+                </button>
+            </div>
+        <?php endif; ?>
 
     </header>

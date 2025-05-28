@@ -1,4 +1,13 @@
 <?php require_once 'header.php'; ?>
+<?php
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
 
 <main>
 
