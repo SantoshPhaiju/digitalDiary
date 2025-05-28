@@ -34,10 +34,13 @@
                 </button>
             </div>
         <?php else: ?>
-            <div class="buttons">
-                <button>
-                    <a href="logout.php">Logout</a>
-                </button>
+            <div class="contentsDiv">
+                <div class="welcomeMessage">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</div>
+                <div class="buttons">
+                    <button>
+                        <a href="logout.php">Logout</a>
+                    </button>
+                </div>
             </div>
         <?php endif; ?>
 
