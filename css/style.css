@@ -20,6 +20,9 @@ header {
   padding: 1rem 64px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Navigation Menu */
@@ -158,6 +161,39 @@ footer .container {
 }
 
 .mainHeading button:hover {
+  background-color: #3e9443;
+  transform: scale(1.05);
+}
+
+/* Header button group container */
+header .buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-left: auto;
+}
+
+/* Button styles */
+header .buttons button {
+  background-color: #4CAF50;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Link inside button */
+header .buttons button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Hover effect */
+header .buttons button:hover {
   background-color: #3e9443;
   transform: scale(1.05);
 }
