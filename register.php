@@ -4,6 +4,12 @@
 
 require_once './db/db.php';
 
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
 $successMessage = "";
 $username = $email = "";
 
@@ -64,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="password">Confirm Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit">Signup</button>
         </form>
 
     </div>

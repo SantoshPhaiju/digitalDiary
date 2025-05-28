@@ -3,6 +3,15 @@
 <?php
 
 require_once './db/db.php';
+$errorMessage = "";
+
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST['username']);
@@ -42,6 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <main class="loginPage">
     <div class="loginContainer">
+
+        <?php if (!empty($errorMessage))
+            echo $errorMessage; ?>
 
         <h1>Login to My Digital Diary</h1>
 
