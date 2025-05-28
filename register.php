@@ -1,10 +1,50 @@
 <?php require_once 'header.php'; ?>
 
+<?php
+
+require_once './db/db.php';
+
+$successMessage = "";
+$username = $email = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
+
+    if (empty($username) || empty($email) || empty($password)) {
+        $successMessage = "<div class='alert error'>Please fill in all fields.</div>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $successMessage = "<div class='alert error'>Invalid email format.</div>";
+    } elseif ($password !== $confirmPassword) {
+        $successMessage = "<div class='alert error'>Passwords do not match.</div>";
+    } else {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $email, $hashedPassword);
+
+        if ($stmt->execute()) {
+            $successMessage = "<div class='alert success'>Registration successful! <a href='login.php'>Login now</a>.</div>";
+            $username = $email = ""; // Reset input fields
+        } else {
+            $successMessage = "<div class='alert error'>Error: " . $stmt->error . "</div>";
+        }
+
+        $stmt->close();
+        $conn->close();
+    }
+}
+
+
+
+?>
 
 
 <main class="registerPage">
     <div class="registerContainer">
-
+        <?php if (!empty($successMessage))
+            echo $successMessage; ?>
         <h1>Create an Account</h1>
 
         <form method="post" action="register.php">

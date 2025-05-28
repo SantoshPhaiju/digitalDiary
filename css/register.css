@@ -41,3 +41,23 @@
   background-color: #43a047;
   transform: scale(1.02);
 }
+
+.alert {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.alert.success {
+  background-color: #d0f0dc;
+  color: #2e7d32;
+  border: 1px solid #81c784;
+}
+
+.alert.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+}
