@@ -1,0 +1,71 @@
+/* Center the login container on the page */
+
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8f5e9;
+}
+
+.loginContainer {
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #f0fff4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+  height: auto;
+  margin: 2rem auto;
+}
+
+.loginContainer h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #2e7d32;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #388e3c;
+}
+
+.formGroup input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+.loginContainer form button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.loginContainer form button:hover {
+  background-color: #43a047;
+  transform: scale(1.02);
+}
