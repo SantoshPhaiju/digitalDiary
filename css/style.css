@@ -176,7 +176,7 @@ header .buttons {
 
 /* Button styles */
 header .buttons button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -189,7 +189,7 @@ header .buttons button a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Hover effect */
