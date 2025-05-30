@@ -12,7 +12,24 @@ if (!isset($_SESSION['user_id'])) {
 
 <main>
     <div class="mainHeading">
-        Add Entry Page
+        <h1>Add New Diary Entry</h1>
+    </div>
+
+    <div class="formContainer">
+        <form method="POST" action="save_entry.php">
+            <div class="formGroup">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Today's Mood" required>
+            </div>
+
+            <div class="formGroup">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" rows="8" placeholder="Write your diary entry..."
+                    required></textarea>
+            </div>
+
+            <button type="submit">Save Entry</button>
+        </form>
     </div>
 </main>
 
