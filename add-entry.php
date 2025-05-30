@@ -28,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
                     required></textarea>
             </div>
 
-            <button type="submit">Save Entry</button>
+            <button class="saveEntryButton" type="submit">Save Entry</button>
         </form>
     </div>
 </main>

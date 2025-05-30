@@ -208,3 +208,38 @@ header .buttons button:hover {
   color: #bd1c1c;
   font-weight: 600;
 }
+
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  resize: vertical; /* allows vertical resize only */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 150px; /* you can adjust height as needed */
+}
+
+textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+.saveEntryButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.saveEntryButton:hover {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
