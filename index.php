@@ -34,8 +34,8 @@ if ($result->num_rows === 0) {
     </div>
 
 
-        <?php if (isset($errorMessage))
-            echo $errorMessage; ?>
+    <?php if (isset($errorMessage))
+        echo $errorMessage; ?>
     <div class="myContents">
         <?php foreach ($entries as $entry): ?>
             <div class="diaryEntry">
