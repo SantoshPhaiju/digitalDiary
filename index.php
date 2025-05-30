@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
         <h1>
             Welcome to My Digital Diary!
         </h1>
-        <button>
+        <button onclick="location.href='add-entry.php'">
             + Add New Entry
         </button>
     </div>
