@@ -18,9 +18,6 @@ if ($result->num_rows === 0) {
 } else {
     $entries = $result->fetch_all(MYSQLI_ASSOC);
 }
-if (isset($errorMessage)) {
-    echo $errorMessage;
-}
 
 
 ?>
@@ -36,39 +33,32 @@ if (isset($errorMessage)) {
         </button>
     </div>
 
-    <div class="myContents">
 
         <?php if (isset($errorMessage))
             echo $errorMessage; ?>
-        <?php if (isset($entries) && count($entries) > 0): ?>
-            <?php foreach ($entries as $entry): ?>
-                <div class="diaryEntry">
-                    <div>
-                        <?php echo date("l, d F Y", strtotime($entry['created_at'])); ?>
-                    </div>
-                    <h2>
-                        <?php echo htmlspecialchars($entry['title']); ?>
-                    </h2>
-                    <div class="content">
-                        <?php echo htmlspecialchars(substr($entry['content'], 0, 100)) . '...'; ?>
-                    </div>
-                    <button>
-                        <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
-                    </button>
-                    <button>
-                        <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
-                    </button>
-                    <button>
-                        <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
-                    </button>
+    <div class="myContents">
+        <?php foreach ($entries as $entry): ?>
+            <div class="diaryEntry">
+                <div>
+                    <?php echo date("l, d F Y", strtotime($entry['timestamp'])); ?>
                 </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="alert info">
-                No diary entries found. Start by adding a new entry!
+                <h2>
+                    <?php echo htmlspecialchars($entry['title']); ?>
+                </h2>
+                <div class="content">
+                    <?php echo htmlspecialchars(substr($entry['content'], 0, 100)) . '...'; ?>
+                </div>
+                <button>
+                    <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
+                </button>
+                <button>
+                    <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
+                </button>
+                <button>
+                    <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
+                </button>
             </div>
-        <?php endif; ?>
-
+        <?php endforeach; ?>
     </div>
 
 
