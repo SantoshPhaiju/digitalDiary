@@ -7,6 +7,26 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $title = trim($_POST['title']);
+    $content = trim($_POST['content']);
+    $userId = $_SESSION['user_id'];
+
+    if (empty($title) || empty($content)) {
+        $errorMessage = "<div class='alert error'> Please fill all the required details </div>";
+    } else {
+        $stmt = $conn->prepare("INSERT INTO diary (user_id, title, content) VALUES (?, ?, ?)");
+        $stmt->bind_param("iss", $userId, $title, $content);
+        if ($stmt->execute()) {
+            header("Location: index.php");
+            exit();
+        } else {
+            $errorMessage = "<div class='alert error'> Error saving entry. Please try again. </div>";
+        }
+    }
+}
+
+
 ?>
 
 
@@ -16,7 +36,9 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <div class="formContainer">
-        <form method="POST" action="save_entry.php">
+        <?php if (isset($errorMessage))
+            echo $errorMessage; ?>
+        <form method="POST" action="add-entry.php">
             <div class="formGroup">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" placeholder="Today's Mood" required>
