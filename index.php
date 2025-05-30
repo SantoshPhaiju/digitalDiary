@@ -7,6 +7,22 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+require_once './db/db.php';
+
+$stmt = $conn->prepare("SELECT * FROM diary WHERE user_id = ?");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows === 0) {
+    $errorMessage = "<div class='alert error'> No diary entries found. </div>";
+} else {
+    $entries = $result->fetch_all(MYSQLI_ASSOC);
+}
+if (isset($errorMessage)) {
+    echo $errorMessage;
+}
+
+
 ?>
 
 <main>
@@ -21,50 +37,38 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <div class="myContents">
-        <div class="diaryEntry">
-            <div>
-                Wednesday, 18 October 2023
-            </div>
-            <h2>
-                Today was a good day!
-            </h2>
-            <div class="content">
-                Today I learned about PHP and how to create a simple web application. I also went for a walk in the park
-                and enjoyed the beautiful weather. It was a refreshing da...
-            </div>
-            <button>
-                <a href="#">See More</a>
-            </button>
-            <button>
-                <a href="#">Edit</a>
-            </button>
-            <button>
-                <a href="#">Delete</a>
-            </button>
 
-        </div>
-        <div class="diaryEntry">
-            <div>
-                Wednesday, 18 October 2023
+        <?php if (isset($errorMessage))
+            echo $errorMessage; ?>
+        <?php if (isset($entries) && count($entries) > 0): ?>
+            <?php foreach ($entries as $entry): ?>
+                <div class="diaryEntry">
+                    <div>
+                        <?php echo date("l, d F Y", strtotime($entry['created_at'])); ?>
+                    </div>
+                    <h2>
+                        <?php echo htmlspecialchars($entry['title']); ?>
+                    </h2>
+                    <div class="content">
+                        <?php echo htmlspecialchars(substr($entry['content'], 0, 100)) . '...'; ?>
+                    </div>
+                    <button>
+                        <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
+                    </button>
+                    <button>
+                        <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
+                    </button>
+                    <button>
+                        <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
+                    </button>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="alert info">
+                No diary entries found. Start by adding a new entry!
             </div>
-            <h2>
-                Today was a good day!
-            </h2>
-            <div class="content">
-                Today I learned about PHP and how to create a simple web application. I also went for a walk in the park
-                and enjoyed the beautiful weather. It was a refreshing da...
-            </div>
-            <button>
-                <a href="#">See More</a>
-            </button>
-            <button>
-                <a href="#">Edit</a>
-            </button>
-            <button>
-                <a href="#">Delete</a>
-            </button>
+        <?php endif; ?>
 
-        </div>
     </div>
 
 
