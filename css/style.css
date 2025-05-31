@@ -10,13 +10,13 @@ body {
 }
 
 main {
-  padding: 48px 64px;
+  padding: 12px 8px;
   min-height: 87vh;
 }
 
 header {
   background-color: #4caf50; /* green */
-  padding: 1rem 64px;
+  padding: 12px 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
@@ -27,11 +27,11 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 4px;
 }
 
 nav ul li {
-  padding: 0.5rem 1rem;
+  padding: 8px 8px;
 }
 
 nav ul li a {
@@ -44,7 +44,7 @@ nav ul li a {
 nav ul li:hover {
   background-color: #45a049;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 8px 8px;
   box-sizing: border-box;
 }
 
@@ -55,30 +55,28 @@ nav ul li a:hover {
 footer {
   background-color: #4caf50;
   color: white;
-  padding: 1rem 2rem;
+  padding: 16px 24px;
   text-align: center;
   margin-top: auto;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer .container {
-  max-width: 1000px;
   margin: 0 auto;
 }
-
+ 
 .myContents {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 16px;
   width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 8px;
 }
 
 .diaryEntry {
   background-color: #fff;
   border-left: 4px solid #4caf50;
-  padding: 1rem;
+  padding: 16px;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
@@ -131,8 +129,7 @@ footer .container {
 
 .mainHeading {
   width: 100%;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 16px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,4 +239,38 @@ textarea:focus {
 .saveEntryButton:hover {
   background-color: #43a047;
   transform: scale(1.05);
+}
+
+/* Tailwind CSS responsive breakpoints in plain CSS */
+
+/* Small devices (min-width: 640px) */
+@media (min-width: 640px) {
+  /* sm: */
+  main {
+    padding: 8px 16px;
+  }
+
+  header {
+    border: 1px solid black;
+  }
+}
+
+/* Medium devices (min-width: 768px) */
+@media (min-width: 768px) {
+  /* md: */
+}
+
+/* Large devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+  /* lg: */
+}
+
+/* Extra Large devices (min-width: 1280px) */
+@media (min-width: 1280px) {
+  /* xl: */
+}
+
+/* 2XL devices (min-width: 1536px) */
+@media (min-width: 1536px) {
+  /* 2xl: */
 }
