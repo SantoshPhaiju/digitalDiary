@@ -10,13 +10,13 @@ body {
 }
 
 main {
-  padding: 12px 8px;
+  padding: 16px 12px;
   min-height: 87vh;
 }
 
 header {
   background-color: #4caf50; /* green */
-  padding: 12px 8px;
+  padding: 8px 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
@@ -64,13 +64,13 @@ footer {
 footer .container {
   margin: 0 auto;
 }
- 
+
 .myContents {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
   width: 100%;
-  padding: 0 8px;
+  padding: 24px 0px;
 }
 
 .diaryEntry {
@@ -94,9 +94,9 @@ footer .container {
 }
 
 .diaryEntry h2 {
-  font-size: 1.1rem;
+  font-size: 18px;
   color: #333;
-  margin-bottom: 0.6rem;
+  margin-bottom: 12px;
 }
 
 .diaryEntry .content {
@@ -134,19 +134,19 @@ footer .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .mainHeading h1 {
-  font-size: 2rem;
+  font-size: 24px;
   color: #333;
-  margin-bottom: 0.5rem;
 }
 
 .mainHeading button {
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 0.6rem 1rem;
+  padding: 8px 16px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 6px;
@@ -163,7 +163,6 @@ header .buttons {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-right: 1.5rem;
   margin-left: auto;
 }
 
@@ -194,16 +193,15 @@ header .buttons button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 4px;
 }
 
 .contentsDiv .welcomeMessage {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: capitalize;
-  color: #333;
   text-align: center;
-  color: #bd1c1c;
-  font-weight: 600;
+  color: #2a1717;
+  font-weight: 400;
 }
 
 textarea {
@@ -250,8 +248,9 @@ textarea:focus {
     padding: 8px 16px;
   }
 
-  header {
-    border: 1px solid black;
+  .myContents {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
@@ -263,14 +262,26 @@ textarea:focus {
 /* Large devices (min-width: 1024px) */
 @media (min-width: 1024px) {
   /* lg: */
+  .myContents {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
 }
 
 /* Extra Large devices (min-width: 1280px) */
 @media (min-width: 1280px) {
   /* xl: */
+  .myContents {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
 }
 
 /* 2XL devices (min-width: 1536px) */
 @media (min-width: 1536px) {
   /* 2xl: */
+  .myContents {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
 }

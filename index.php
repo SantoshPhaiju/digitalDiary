@@ -46,7 +46,13 @@ if ($result->num_rows === 0) {
                     <?php echo htmlspecialchars($entry['title']); ?>
                 </h2>
                 <div class="content">
-                    <?php echo htmlspecialchars(substr($entry['content'], 0, 100)) . '...'; ?>
+                    <?php
+                    $content = $entry['content'];
+                    echo htmlspecialchars(substr($content, 0, 200));
+                    if (strlen($content) > 200) {
+                        echo '...';
+                    }
+                    ?>
                 </div>
                 <button>
                     <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
