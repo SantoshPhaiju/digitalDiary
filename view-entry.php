@@ -38,13 +38,14 @@ if (isset($errorMessage)) {
         </div>
 
         <div class="entryActions">
-            <button><a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a></button>
-            <button><a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a></button>
-            <button><a href="index.php">Back to Entries</a></button>
+            <button
+                style="border: 1px solid black; margin-top: 80px; font-size: 16px; padding: 8px 16px; border-radius: 8px; text-decoration: none;"><a
+                    href="index.php" style="text-decoration: none;">Back to Entries</a></button>
         </div>
     </main>
     <?php
 }
+
 require_once './footer.php';
 
 
