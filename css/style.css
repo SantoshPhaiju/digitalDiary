@@ -11,8 +11,9 @@ body {
 
 main {
   padding: 16px 12px;
-  min-height: 88vh;
+  min-height: 89vh;
 }
+
 
 header {
   background-color: #4caf50; /* green */
