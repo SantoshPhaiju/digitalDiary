@@ -51,7 +51,7 @@ if ($entryId && is_numeric($entryId)) {
         <div class="formContainer">
             <?php if (isset($errorMessage) && !empty($errorMessage))
                 echo $errorMessage; ?>
-            <form method="POST" action="edit-entry.php">
+            <form method="POST" action="save-updated-entry.php?id=<?php echo $entryId; ?>">
                 <div class="formGroup">
                     <label for="title">Title</label>
                     <input type="text" id="title" name="title" placeholder="Update your title"

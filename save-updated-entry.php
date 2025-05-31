@@ -18,7 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($title) || empty($content)) {
             header("Location: edit-entry.php?id=$entryId&error=Please fill all the required details");
         } else {
-            
+            $stmt = $conn->prepare("UPDATE diary SET title = ?, content = ? WHERE id = ? AND user_id = ?");
+            $stmt->bind_param("ssii", $title, $content, $entryId, $userId);
+            if ($stmt->execute()) {
+                header("Location: view-entry.php?id=$entryId");
+                exit();
+            } else {
+                header("Location: edit-entry.php?id=$entryId&error=Error updating entry. Please try again.");
+            }
         }
 
     } else {
