@@ -33,19 +33,13 @@ if ($entryId && is_numeric($entryId)) {
 }
 
 
-
-
 ?>
-
-
-
 
 
 <main>
     <div class="mainHeading">
         <h1>Update your diary entry</h1>
     </div>
-
 
     <?php if ($result->num_rows > 0): ?>
         <div class="formContainer">
@@ -74,11 +68,6 @@ if ($entryId && is_numeric($entryId)) {
         </div>
     <?php endif; ?>
 </main>
-
-
-
-
-
 
 
 <?php require_once './footer.php'; ?>

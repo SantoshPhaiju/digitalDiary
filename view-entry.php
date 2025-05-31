@@ -1,7 +1,6 @@
 <?php require_once 'header.php'; ?>
 
 <?php
-
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -43,10 +42,10 @@ if (isset($errorMessage)) {
                     href="index.php" style="text-decoration: none;">Back to Entries</a></button>
         </div>
     </main>
+
     <?php
 }
 
-require_once './footer.php';
-
-
 ?>
+
+<?php require_once 'footer.php'; ?>

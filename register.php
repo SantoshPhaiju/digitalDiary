@@ -1,7 +1,6 @@
 <?php require_once 'header.php'; ?>
 
 <?php
-
 require_once './db/db.php';
 
 session_start();
@@ -42,8 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-
-
 ?>
 
 
@@ -72,12 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <button type="submit">Signup</button>
         </form>
-
     </div>
-
 </main>
-
-
 
 
 <?php require_once 'footer.php'; ?>

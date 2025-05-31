@@ -1,4 +1,5 @@
 <?php require_once 'header.php'; ?>
+
 <?php
 
 session_start();
@@ -19,7 +20,6 @@ if ($result->num_rows === 0) {
     $entries = $result->fetch_all(MYSQLI_ASSOC);
 }
 
-
 ?>
 
 <main>
@@ -32,7 +32,6 @@ if ($result->num_rows === 0) {
             + Add New Entry
         </button>
     </div>
-
 
     <?php if (isset($errorMessage))
         echo $errorMessage; ?>
@@ -68,8 +67,6 @@ if ($result->num_rows === 0) {
             </div>
         <?php endforeach; ?>
     </div>
-
-
 </main>
 
 

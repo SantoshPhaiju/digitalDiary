@@ -1,7 +1,6 @@
 <?php require_once 'header.php'; ?>
 
 <?php
-
 require_once './db/db.php';
 $errorMessage = "";
 
@@ -10,8 +9,6 @@ if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
 }
-
-
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST['username']);
@@ -47,8 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 ?>
 
-
-
 <main class="loginPage">
     <div class="loginContainer">
 
@@ -72,8 +67,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
 </main>
-
-
-
 
 <?php require_once 'footer.php'; ?>
