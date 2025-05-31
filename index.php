@@ -60,14 +60,21 @@ if ($result->num_rows === 0) {
                     <button>
                         <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
                     </button>
-                    <button>
-                        <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
-                    </button>
+                    <button style="color: white; font-weight: 500; font-size: 16px;"
+                        onclick="confirmDelete(<?php echo $entry['id']; ?>)">Delete</button>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
 </main>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm("Are you sure you want to delete this entry?")) {
+            window.location.href = `delete-entry.php?id=${id}`;
+        }
+    }
+</script>
 
 
 <?php require_once 'footer.php'; ?>
