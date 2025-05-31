@@ -7,7 +7,7 @@
 
 .loginContainer {
   max-width: 400px;
-  padding: 2rem;
+  padding: 20px;
   background-color: #f0fff4;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
@@ -18,8 +18,8 @@
 
 .loginContainer h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  margin-bottom: 24px;
+  font-size: 24px;
   color: #2e7d32;
 }
 
@@ -78,6 +78,12 @@
 /* Medium devices (min-width: 768px) */
 @media (min-width: 768px) {
   /* md: */
+  .loginContainer h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 24px;
+    color: #2e7d32;
+  }
 }
 
 /* Large devices (min-width: 1024px) */

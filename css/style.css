@@ -120,7 +120,7 @@ footer .container {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .diaryEntry button:hover {
@@ -161,7 +161,7 @@ footer .container {
 
 header .buttons {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
   align-items: center;
   margin-left: auto;
 }
@@ -169,7 +169,7 @@ header .buttons {
 header .buttons button {
   background-color: #4caf50;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -245,7 +245,11 @@ textarea:focus {
 @media (min-width: 640px) {
   /* sm: */
   main {
-    padding: 8px 16px;
+    padding: 8px 24px;
+  }
+
+  header {
+    padding: 8px 24px;
   }
 
   .myContents {
@@ -257,11 +261,26 @@ textarea:focus {
 /* Medium devices (min-width: 768px) */
 @media (min-width: 768px) {
   /* md: */
+  main {
+    padding: 8px 32px;
+  }
+
+  header {
+    padding: 8px 32px;
+  }
 }
 
 /* Large devices (min-width: 1024px) */
 @media (min-width: 1024px) {
   /* lg: */
+  main {
+    padding: 8px 38px;
+  }
+
+  header {
+    padding: 8px 38px;
+  }
+
   .myContents {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -271,6 +290,14 @@ textarea:focus {
 /* Extra Large devices (min-width: 1280px) */
 @media (min-width: 1280px) {
   /* xl: */
+  main {
+    padding: 8px 48px;
+  }
+
+  header {
+    padding: 8px 48px;
+  }
+
   .myContents {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
@@ -280,6 +307,14 @@ textarea:focus {
 /* 2XL devices (min-width: 1536px) */
 @media (min-width: 1536px) {
   /* 2xl: */
+  main {
+    padding: 8px 64px;
+  }
+
+  header {
+    padding: 8px 64px;
+  }
+
   .myContents {
     grid-template-columns: repeat(5, 1fr);
     gap: 24px;
