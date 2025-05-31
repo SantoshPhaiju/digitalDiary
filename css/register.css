@@ -61,3 +61,30 @@
   color: #c62828;
   border: 1px solid #ef5350;
 }
+
+/* Tailwind CSS responsive breakpoints in plain CSS */
+
+/* Small devices (min-width: 640px) */
+@media (min-width: 640px) {
+  /* sm: */
+}
+
+/* Medium devices (min-width: 768px) */
+@media (min-width: 768px) {
+  /* md: */
+}
+
+/* Large devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+  /* lg: */
+}
+
+/* Extra Large devices (min-width: 1280px) */
+@media (min-width: 1280px) {
+  /* xl: */
+}
+
+/* 2XL devices (min-width: 1536px) */
+@media (min-width: 1536px) {
+  /* 2xl: */
+}
