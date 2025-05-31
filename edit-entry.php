@@ -10,6 +10,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $entryId = $_GET['id'] ?? null;
+$errorMessage;
+if ($_GET['error']) {
+    $errorMessage = "<div class='alert error'>" . htmlspecialchars($_GET['error']) . "</div>";
+}
+
 $entry;
 
 if ($entryId && is_numeric($entryId)) {
@@ -44,7 +49,7 @@ if ($entryId && is_numeric($entryId)) {
 
     <?php if ($result->num_rows > 0): ?>
         <div class="formContainer">
-            <?php if (isset($errorMessage))
+            <?php if (isset($errorMessage) && !empty($errorMessage))
                 echo $errorMessage; ?>
             <form method="POST" action="edit-entry.php">
                 <div class="formGroup">

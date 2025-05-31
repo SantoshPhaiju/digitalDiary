@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($entryId && is_numeric($entryId)) {
         if (empty($title) || empty($content)) {
             header("Location: edit-entry.php?id=$entryId&error=Please fill all the required details");
+        } else {
+            
         }
 
     } else {
