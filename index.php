@@ -48,21 +48,23 @@ if ($result->num_rows === 0) {
                 <div class="content">
                     <?php
                     $content = $entry['content'];
-                    echo htmlspecialchars(substr($content, 0, 200));
-                    if (strlen($content) > 200) {
+                    echo htmlspecialchars(substr($content, 0, 100));
+                    if (strlen($content) > 100) {
                         echo '...';
                     }
                     ?>
                 </div>
-                <button>
-                    <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
-                </button>
-                <button>
-                    <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
-                </button>
-                <button>
-                    <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
-                </button>
+                <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    <button>
+                        <a href="view-entry.php?id=<?php echo $entry['id']; ?>">See More</a>
+                    </button>
+                    <button>
+                        <a href="edit-entry.php?id=<?php echo $entry['id']; ?>">Edit</a>
+                    </button>
+                    <button>
+                        <a href="delete-entry.php?id=<?php echo $entry['id']; ?>">Delete</a>
+                    </button>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

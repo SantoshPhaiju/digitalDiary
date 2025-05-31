@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php if (!empty($errorMessage))
             echo $errorMessage; ?>
 
-        <h1>Login to My Digital Diary</h1>
+        <h1>Login</h1>
 
         <form method="post" action="login.php">
             <div class="formGroup">
